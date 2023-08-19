@@ -1,0 +1,71 @@
+@import "../../assets/sass/variables";
+@import "../../assets/sass/mixins";
+.header-main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 50px;
+  @media screen and (max-width: 780px) {
+    padding: 16px 20px;
+    .contact-usBtn {
+      display: none;
+    }
+  }
+  .header-logo {
+    svg {
+      cursor: pointer;
+    }
+  }
+  .header-list {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    position: relative;
+
+    svg {
+      display: none;
+      width: 25px;
+      height: 25px;
+      color: $primaryColor;
+      @media screen and (max-width: 780px) {
+        display: block;
+        cursor: pointer;
+      }
+    }
+    & > a {
+      text-decoration: none;
+      @include headingTextStyle;
+      font-size: 14px;
+      @media screen and (max-width: 780px) {
+        display: none;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .dropdown-header {
+    width: 150px;
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    background-color: $primaryColor;
+    border-radius: 10px;
+    overflow: hidden;
+    & > a {
+      text-decoration: none;
+      padding: 10px 15px;
+      @include headingTextStyle;
+      color: white;
+      font-size: 14px;
+      &:hover {
+        background-color: white;
+        color: $primaryColor;
+      }
+    }
+  }
+}

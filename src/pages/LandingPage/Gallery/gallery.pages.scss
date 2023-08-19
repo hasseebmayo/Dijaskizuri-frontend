@@ -1,0 +1,92 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/mixins";
+.gallery-main-container {
+  margin-top: 40px;
+  padding: 0px 76px;
+  @media screen and (max-width: 780px) {
+    padding: 0;
+  }
+  .gallery-heading {
+    text-align: center;
+    h5 {
+      @include headingTextStyle;
+    }
+    p {
+      @include paragrapgTextStyle;
+      color: $thirdColor;
+    }
+  }
+  .gallery-collection {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 25px;
+    align-items: center;
+    @media screen and (max-width: 780px) {
+      flex-direction: column;
+      row-gap: 25px;
+    }
+    .gallery-single {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+      width: 22%;
+      cursor: pointer;
+
+      height: 200px;
+      border-radius: 30px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: saturation;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      &::before {
+        content: "";
+        width: 100%;
+        border-radius: 30px;
+
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      @media screen and (max-width: 780px) {
+        width: 90%;
+      }
+
+      h5 {
+        @include headingTextStyle;
+        color: #f0f0f0;
+        font-size: 22px;
+        text-align: center;
+        text-shadow: 3px 3px 20px #b81667, -2px 1px 30px #000000;
+        font-weight: 700;
+      }
+    }
+    .bg-img-1 {
+      background-image: url(../../../assets/images/BgImage1.svg);
+    }
+    .bg-img-2 {
+      background-image: url(../../../assets/images/BgImage2.jpg);
+    }
+    .bg-img-3 {
+      background-image: url(../../../assets/images/BgImage3.jpg);
+    }
+    .bg-img-4 {
+      background-image: url(../../../assets/images/BgImage4.jpg);
+    }
+    .gallry-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      p {
+        @include headingTextStyle;
+        font-size: 48px;
+        font-weight: 400;
+      }
+    }
+  }
+}

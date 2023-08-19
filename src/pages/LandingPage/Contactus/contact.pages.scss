@@ -1,0 +1,116 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/mixins";
+.contact-us-main {
+  display: flex;
+  width: 100%;
+  padding: 0px 76px;
+
+  justify-content: center;
+  margin-top: 70px;
+  column-gap: 70px;
+  @media screen and (max-width: 768px) {
+    padding: 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-us-Details {
+    width: 395px;
+
+    background: linear-gradient(90deg, #1488cc 0%, #2b32b2 100%);
+    border-radius: 20px;
+    padding: 20px;
+    @media screen and (max-width: 768px) {
+      width: 90%;
+    }
+    .contact-detail-img {
+      width: 100%;
+      img {
+        width: 100%;
+        border-radius: 20px;
+      }
+    }
+    .contact-content {
+      margin-top: 12px;
+      h3 {
+        @include headingTextStyle;
+        color: var(--f-7-f-7-fc, #f7f7fc);
+        font-size: 16px;
+      }
+      .club-location-box {
+        display: flex;
+        background: rgba(247, 247, 252, 0.1);
+        padding: 10px 58px;
+        border-radius: 10px;
+        margin-top: 7px;
+
+        justify-content: space-between;
+        .club-city {
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+          p {
+            @include paragrapgTextStyle;
+            color: #f7f7fc;
+            font-weight: 500;
+            font-size: 10px;
+          }
+        }
+        .club-bar {
+          color: #f7f7fc;
+        }
+      }
+      .club-details {
+        & > p {
+          @include paragrapgTextStyle;
+          color: #f7f7fc;
+          font-size: 12px;
+          margin-top: 7px;
+        }
+      }
+      .club-btn {
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+        justify-content: center;
+        button {
+          padding: 8px 30px;
+        }
+      }
+    }
+  }
+  .contact-us-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    width: 50%;
+    @media screen and (max-width: 768px) {
+      width: 90%;
+    }
+
+    h2 {
+      @include headingTextStyle;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      row-gap: 10px;
+      input,
+      textarea {
+        @include inputTextStyle;
+        resize: none;
+      }
+      .form-btn {
+        margin-top: 20px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        button {
+          padding: 14px 80px;
+        }
+      }
+    }
+  }
+}

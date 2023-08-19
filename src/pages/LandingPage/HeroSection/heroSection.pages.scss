@@ -1,0 +1,7 @@
+.hero-section-main {
+  height: 80vh;
+  width: 100%;
+  @media screen and (max-width: 780px) {
+    height: 95vh;
+  }
+}

@@ -1,0 +1,50 @@
+@import "variables";
+@mixin btnStyle {
+  padding: 14px 29px;
+  font-size: 14px;
+  font-weight: $fontBold;
+  color: #fff;
+  cursor: pointer;
+  font-family: $primaryFontFamily;
+  border-radius: 22px;
+  background-color: $primaryColor;
+  border: 1px solid $primaryColor;
+  &:hover {
+    background-color: #fff;
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+  }
+}
+
+@mixin headingTextStyle {
+  font-size: $headingTextSize;
+  font-weight: $fontBold;
+  color: $primaryColor;
+  font-family: $primaryFontFamily;
+}
+@mixin paragrapgTextStyle {
+  font-size: $paraTextSize;
+  font-weight: $fontRegular;
+  color: $secondaryColor;
+  font-family: $primaryFontFamily;
+}
+
+@mixin inputTextStyle {
+  font-size: $paraTextSize;
+  font-weight: $fontRegular;
+  color: $secondaryColor;
+  background-color: $primaryColorWithOpacity;
+  font-family: $primaryFontFamily;
+  border-radius: 22px;
+  border: none;
+  padding: 15px 25px;
+  width: 100%;
+  outline: none;
+  &:active,
+  &:focus {
+    outline: 1px solid $primaryColor;
+  }
+  &::placeholder {
+    color: $secondaryColor;
+  }
+}

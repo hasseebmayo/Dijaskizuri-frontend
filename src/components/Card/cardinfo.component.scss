@@ -1,0 +1,29 @@
+@import "../../assets/sass/variables";
+@import "../../assets/sass/mixins";
+.card-info-main {
+  width: 337px;
+  //   height: 210px;
+  border-radius: 30px;
+  background-color: $primaryColorWithOpacity;
+  padding: 30px 22px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  .card-line {
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    h5 {
+      @include headingTextStyle;
+      font-size: 12px;
+    }
+    p {
+      @include paragrapgTextStyle;
+      color: $thirdColor;
+    }
+  }
+}

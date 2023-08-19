@@ -1,0 +1,35 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/mixins";
+
+.partner-section {
+  width: 100%;
+  margin-top: 70px;
+  height: 125px;
+  background: $primaryColor;
+  padding: 48px 98px;
+  display: flex;
+  align-items: center;
+  column-gap: 117px;
+
+  @media screen and (max-width: 768px) {
+    row-gap: 10px;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 20px 70px;
+    column-gap: 0px;
+
+    svg {
+      width: 50%;
+    }
+  }
+  .partner-title {
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+    h2 {
+      @include headingTextStyle;
+      font-size: 24px;
+      color: #f7f7fc;
+    }
+  }
+}
