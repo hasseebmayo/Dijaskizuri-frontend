@@ -1,4 +1,4 @@
-import { Partner1, Partner2, Partner3, Partner4 } from "../../../assets/images";
+import partner from "../../../assets/images/Partner.png";
 import "./partner.pages.scss";
 const PartnersMain = () => {
   return (
@@ -7,10 +7,7 @@ const PartnersMain = () => {
         <h2>Naši Sponzorji/Partnerji</h2>
       </div>
 
-      <Partner3 />
-      <Partner2 />
-      <Partner1 />
-      <Partner4 />
+      <img src={partner} alt="Partner 01" />
     </div>
   );
 };

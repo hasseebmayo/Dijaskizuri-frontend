@@ -7,7 +7,12 @@ import HeroImage4 from "../../assets/images/HeroImage4.jpg";
 import { useEffect, useState } from "react";
 const SliderImages = () => {
   const images = [HeroImage1, HeroImage2, HeroImage3, HeroImage4];
-  const sliderImagesText = ["Zgodba o", "Najlepših", "Tvojega", "Življenja"];
+  const sliderImagesText = [
+    "Zgodba o",
+    "Najlepših letih",
+    "Tvojega",
+    "Življenja",
+  ];
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   useEffect(() => {
     const interval = setInterval(() => {
