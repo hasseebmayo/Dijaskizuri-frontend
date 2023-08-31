@@ -1,4 +1,4 @@
-import partner from "../../../assets/images/Partner.png";
+import { Partner } from "../../../assets/images";
 import "./partner.pages.scss";
 const PartnersMain = () => {
   return (
@@ -7,7 +7,7 @@ const PartnersMain = () => {
         <h2>Naši Sponzorji/Partnerji</h2>
       </div>
 
-      <img src={partner} alt="Partner 01" />
+      <Partner />
     </div>
   );
 };

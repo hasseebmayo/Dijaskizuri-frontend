@@ -21,8 +21,10 @@ import { ReactComponent as Location } from "./Location.svg";
 import { ReactComponent as Partner4 } from "./Partner4.svg";
 import { ReactComponent as Bars } from "./Bars.svg";
 import { ReactComponent as CrossIcon } from "./CrossIcon.svg";
+import { ReactComponent as Partner } from "./Partner.svg";
 export {
   BriefCaseIcon,
+  Partner,
   Location,
   Calender,
   CrossIcon,
