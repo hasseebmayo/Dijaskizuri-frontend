@@ -3,4 +3,8 @@
 
 .primary-button {
   @include btnStyle;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }

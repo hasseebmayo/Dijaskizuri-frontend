@@ -114,3 +114,10 @@
     }
   }
 }
+
+.success-message {
+  @include paragrapgTextStyle;
+  color: green;
+  font-weight: 500;
+  font-size: 10px;
+}

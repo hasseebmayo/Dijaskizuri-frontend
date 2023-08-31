@@ -1,63 +1,108 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import Button from "../../../components/Button/Button";
 import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios";
 
-const ContactUsForm = () => {
-  const [recapchaValue, setRecaptchaValue] = useState<string | null>();
-  const [data, setData] = useState({
+type FormData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
+const ContactUsForm: React.FC = () => {
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-  const handleSubmition = (e: FormEvent<HTMLFormElement>) => {
+  console.log(isLoading);
+
+  const sendEmail = (data: FormData) => {
+    return axios.post("https://dijaskizuri.si//api/contact-us", data);
+  };
+
+  const handleSubmission = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!recapchaValue) {
+
+    if (!recaptchaValue) {
       alert("Please complete the reCAPTCHA.");
       return;
     }
-    console.log("submit");
+    setIsLoading(true);
+
+    try {
+      await sendEmail(formData);
+      setSuccessMessage(true);
+      setRecaptchaValue(null);
+      setIsLoading(false);
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      alert("Something went wrong. Please try again later.");
+      console.log(error);
+      setIsLoading(false);
+    }
   };
-  const onChange = (
+
+  const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setData((prev) => ({
-      ...prev,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value,
     }));
   };
 
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => {
+        setSuccessMessage(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
+
   return (
     <div className="contact-us-form">
       <h2>Kontaktirajte nas</h2>
-      <form onSubmit={handleSubmition}>
+      <form onSubmit={handleSubmission}>
         <input
           placeholder="Ime in priimek"
           name="name"
-          value={data.name}
-          onChange={onChange}
+          value={formData.name}
+          onChange={handleInputChange}
         />
         <input
           placeholder="Email"
           name="email"
           type="email"
-          value={data.email}
-          onChange={onChange}
+          value={formData.email}
+          onChange={handleInputChange}
           required
         />
         <input
           placeholder="Zadeva"
           name="subject"
-          value={data.subject}
-          onChange={onChange}
+          value={formData.subject}
+          onChange={handleInputChange}
           required
         />
         <textarea
           placeholder="Sporočilo"
           name="message"
-          value={data.message}
-          onChange={onChange}
+          value={formData.message}
+          onChange={handleInputChange}
           required
         ></textarea>
         <ReCAPTCHA
@@ -66,8 +111,13 @@ const ContactUsForm = () => {
             setRecaptchaValue(val);
           }}
         />
+        {successMessage && (
+          <p className="success-message">
+            Your query is submitted successfully.
+          </p>
+        )}
         <div className="form-btn">
-          <Button text="Pošlji" type="submit" />
+          <Button text="Pošlji" type="submit" disabled={isLoading} />
         </div>
       </form>
     </div>
