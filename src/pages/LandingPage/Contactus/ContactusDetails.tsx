@@ -1,16 +1,13 @@
 import { Calender, Location } from "../../../assets/images";
+import Image from "../../../assets/images/XmasIMg.png";
+
 // import contact from "../../../assets/images/Contact.png";
 import Button from "../../../components/Button/Button";
 const ContactusDetails = () => {
   return (
     <div className="contact-us-Details">
       <div className="contact-detail-img">
-        <img
-          src={
-            "https://fienta.com/getimage/uploads/2023/10/73562/73562-231019090759.png?w=1070&fm=webp&dpr=1&s=4868e807c5d8db489789365f57e9c66b"
-          }
-          alt="contact"
-        />
+        <img src={Image} alt="contact" />
       </div>
       <div className="contact-content">
         <h3>Največji Dijaški XMAS Party</h3>
