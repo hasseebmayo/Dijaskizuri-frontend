@@ -10,6 +10,22 @@ const Gallery = () => {
       </div>
       <div className="gallery-collection">
         <div
+          className="gallery-single bg-img-red"
+          onClick={() => {
+            window.open("https://ﬂic.kr/s/aHBqjB4Gee");
+          }}
+        >
+          <h5>Las Vegas Balkan Party</h5>
+        </div>
+        <div
+          className="gallery-single xmas"
+          onClick={() => {
+            window.open("https://ﬂic.kr/s/aHBqjB4K4j");
+          }}
+        >
+          <h5>Največji Back To School Party</h5>
+        </div>
+        <div
           className="gallery-single bg-img-1"
           onClick={() => {
             window.open("https://flic.kr/s/aHBqjAQnTo");
@@ -25,22 +41,7 @@ const Gallery = () => {
         >
           <h5>UV Party</h5>
         </div>
-        <div
-          className="gallery-single bg-img-3"
-          onClick={() => {
-            window.open("https://flic.kr/s/aHBqjAQmjp");
-          }}
-        >
-          <h5>Semafor Party</h5>
-        </div>
-        <div
-          className="gallery-single bg-img-4"
-          onClick={() => {
-            window.open("https://flic.kr/s/aHBqjAQqXk");
-          }}
-        >
-          <h5>Balkan Party</h5>
-        </div>
+
         <div
           className="gallry-links"
           onClick={() => {

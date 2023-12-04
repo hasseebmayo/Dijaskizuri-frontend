@@ -13,31 +13,41 @@ const ContactusDetails = () => {
         />
       </div>
       <div className="contact-content">
-        <h3>Las Vegas Balkan Party</h3>
+        <h3>Največji Dijaški XMAS Party</h3>
         <div className="club-location-box">
           <div className="club-city">
             <Location />
-            <p>Club Pure</p>
+            <p>HALA Kampus</p>
           </div>
           <div className="club-bar">|</div>
           <div className="club-city">
             <Calender />
-            <p>10 / 11 / 2023</p>
+            <p>22 / 12 / 2023</p>
           </div>
         </div>
         <div className="club-details">
           <p>Dragi dijaki in dijakinje!</p>
           <br />
           <p>
-            Pridružite se najjači zabavi v mestu, kjer se bodo združili ritmi
-            Balkana s sijajem Las Vegasa. Pričakujte nepozabne efekte 🎊,
-            balkanske hite 🎵 in svetleče neonske luči 🚨. Žuranje in
-            presenečenja čakajo na vas! Ne zamudite priložnosti da se udeležite
-            še ene noči brez limita 🎊
+            Pridružite se nam na nepozabnem Največjem Dijaškem Xmas Partyju!
+            Doživite praznični čar z mešanico zimskih melodij in modernih
+            ritmov. Pričakujte osupljive praznične dekoracije 🎄, vrhunske DJ
+            nastope 🎶 in žareče božične luči ✨. Zabava bo trajala vso noč s
+            presenečenji, ki vas bodo pustila brez besed! Ne zamudite te
+            fantastične priložnosti, da praznujete božični čas na edinstven
+            način 🎉. Vabljeni na noč, polno glasbe, plesa in nepozabnih
+            trenutkov!
+          </p>
+          <p>
+            📍Hala Kampus ( Ogrevano & Pokrito Prizorišče) Pivovarniška ulica 6,
+            1000 Ljubljana 🗓 22.12.2023 Vstop od 20.00 - 21.00
           </p>
         </div>
         <div className="club-btn">
-          <a href="https://fienta.com/las-vegas-balkan-party" target="_blank">
+          <a
+            href="https://ﬁenta.com/najvecji-dijaski-xmas-party"
+            target="_blank"
+          >
             <Button text="Kupi vstopnice" />
           </a>
         </div>
